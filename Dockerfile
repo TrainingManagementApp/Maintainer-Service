@@ -8,6 +8,6 @@ RUN mvn clean package -DskipTests
 # Stage 2: Run the JAR
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
-COPY --from=build /app/target/Maintainer-Service-server-0.0.2-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/Maintainer-Service-0.0.2-SNAPSHOT.jar app.jar
 EXPOSE 8100
 ENTRYPOINT ["java", "-jar", "app.jar"]
